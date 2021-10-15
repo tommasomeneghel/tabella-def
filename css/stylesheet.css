@@ -34,6 +34,13 @@ table#gameTable>tbody>tr>td:hover {
     cursor: pointer;
 }
 
+p.cellValue {
+    font-size: 50px;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: white;
+}
+
 h1#titolo {
     font-family: 'Orbitron', sans-serif;
     font-size: 75px;
@@ -118,12 +125,13 @@ div#menuInterface {
 p.switchNumber {
     color: white;
     font-family: 'Orbitron', sans-serif;
+    display: inline-block;
 }
 
 div#switchGame {
     position: relative;
-    top: 10%;
-    left: 5%;
+    top: 20%;
+    left: 30%;
 }
 
 div#switch {
@@ -169,14 +177,14 @@ label:before {
     transition: transform 0.75s ease;
     transition-delay: 0.5s;
     content: "";
-    display: block;
-    position: absolute;
+    display: inline;
+    position: relative;
     width: 27px;
     height: 27px;
     background-color: #000;
     border-radius: 50%;
-    top: 6px;
-    left: 6px;
+    top: 7px;
+    left: 7px;
 }
 
 
