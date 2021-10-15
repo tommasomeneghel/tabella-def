@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="authors" content="Buza Enrico e Meneghel Tommaso">
+    <title>Tabella del 15</title>
+    <script src="js/script.js"></script>
+    <script src="js/styles.js"></script>
+    <!-- Fonts -->
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akronim&display=swap" rel="stylesheet">
+    <!-- ... -->
+    <link rel="icon" href="images/icons/favicon.ico">
+</head>
+
+<body onload="setup()">
+    <h1 id="titolo">15 Game Table</h1>
+
+
+
+    <div id="startInterface">
+        <!-- da aggiungere funzione addEventListener al button -->
+        <button id="startButton">Start!</button>
+    </div>
+
+    <div id="gameContainer">
+        <div id="scores">
+            <h2 id="score-table-title">Punteggi</h2>
+            <h3 id="highscore-counter">Highscore: <span id="highscore-value">0</span></h3>
+            <h3 id="score-counter">Current Score: <span id="score-value">0</span></h3>
+            <h3 id="moves-counter">Remainig moves: <span id="moves-value">0</span></h3>
+        </div>
+        <table id="gameTable">
+            <tbody>
+                <tr>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                    <td class="game-tile">
+                        <p class="cellValue"></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="menu">
+        <svg id="icona-menu" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 24 24" style=" fill:#ffffff;">
+            <path d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"></path>
+        </svg>
+        <div id="menuInterface">
+            <div id="switchGame">
+                <p class="switchNumber">9</p>
+                <div id="switch">
+                    <input type="checkbox" id="toggle" />
+                    <label for="toggle"></label>
+                </div>
+                <p class="switchNumber">15</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+div#gameContainer {
+    display: none;
+    z-index: 0.5;
+}
+
+div#startInterface {
+    display: unset;
+    z-index: 0.5;
+}
+
+body {
+    background-color: #101010;
+}
+
+
+/* -------------------Game Interface------------------- */
+
+table {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-collapse: collapse;
+}
+
+table#gameTable>tbody>tr>td {
+    border: 3px solid green;
+    width: 150px;
+    height: 150px;
+}
+
+table#gameTable>tbody>tr>td:hover {
+    background-color: #292929;
+    cursor: pointer;
+}
+
+h1#titolo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 75px;
+    color: white;
+    position: fixed;
+    left: 50%;
+    top: 3%;
+    transform: translate(-50%, -50%);
+    /* Questo stile non permette all'utente di selezionare il testo */
+    user-select: none;
+}
+
+div#scores {
+    position: fixed;
+    left: 2%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    /* border: 2px solid red; */
+    border: 1px solid #101010;
+    border-radius: 5px;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 50px;
+}
+
+span#highscore-value,
+span#score-value,
+span#moves-value {
+    position: absolute;
+    right: 7%;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 35px;
+    border-bottom: 1px solid grey;
+    padding-bottom: 7px;
+    /* Questo stile non permette all'utente di selezionare il testo */
+    user-select: none;
+}
+
+h3 {
+    font-family: 'Orbitron', sans-serif;
+    /* Questo stile non permette all'utente di selezionare il testo */
+    user-select: none;
+}
+
+div#menu {
+    position: sticky;
+    right: 0%;
+    box-sizing: content-box;
+    /* height: 100%;
+    width: 35%; */
+    z-index: 1;
+}
+
+svg#icona-menu {
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    z-index: 1;
+}
+
+svg#icona-menu:hover {
+    cursor: pointer;
+}
+
+div#menuInterface {
+    display: none;
+    position: fixed;
+    right: 0.5%;
+    top: 0.5%;
+    width: 40%;
+    height: 99%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0.5;
+}
+
+
+/*  */
+
+p.switchNumber {
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+}
+
+div#switchGame {
+    position: relative;
+    top: 10%;
+    left: 5%;
+}
+
+div#switch {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked+label {
+    transform: rotate(360deg);
+    background-color: #000;
+}
+
+input[type="checkbox"]:checked+label:before {
+    transform: translateX(45px);
+    background-color: #fff;
+}
+
+label {
+    display: flex;
+    width: 90px;
+    height: 45px;
+    border: 6px solid;
+    border-radius: 99em;
+    border: 2px solid white;
+    position: relative;
+    transition: transform 0.75s ease-in-out;
+    transform-origin: 50% 50%;
+    cursor: pointer;
+}
+
+label:before {
+    transition: transform 0.75s ease;
+    transition-delay: 0.5s;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    background-color: #000;
+    border-radius: 50%;
+    top: 6px;
+    left: 6px;
+}
+
+
+/*  */
+
+
+/* -------------------Start interface------------------- */
+
+button#startButton {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Styles */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    background-color: red;
+    border: 2px solid white;
+    border-radius: 10px;
+    height: 100px;
+    width: 300px;
+}
+
+button#startButton:hover {
+    background-color: rgb(189, 0, 0)
+}
+
+.movable {
+    animation-name: movable;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.selected {
+    background-color: #292929
+}
+
+
+/* Animations */
+
+@keyframes movable {
+    0% {
+        border-color: blue;
+    }
+    25% {
+        border-color: red;
+    }
+    50% {
+        border-color: yellow;
+    }
+    75% {
+        border-color: orange;
+    }
+    100% {
+        border-color: green;
+    }
+}
