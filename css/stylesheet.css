@@ -136,7 +136,7 @@ div#switchGame {
 
 div#switch {
     position: relative;
-    left: 50%;
+    left: 25%;
     transform: translate(-50%, -50%);
 }
 
@@ -156,14 +156,14 @@ input[type="checkbox"]:checked+label {
 }
 
 input[type="checkbox"]:checked+label:before {
-    transform: translateX(45px);
+    transform: translateY(45px);
     background-color: #fff;
 }
 
 label {
     display: flex;
-    width: 90px;
-    height: 45px;
+    width: 45px;
+    height: 90px;
     border: 6px solid;
     border-radius: 99em;
     border: 2px solid white;
@@ -181,7 +181,7 @@ label:before {
     position: relative;
     width: 27px;
     height: 27px;
-    background-color: #000;
+    background-color: #fff;
     border-radius: 50%;
     top: 7px;
     left: 7px;
