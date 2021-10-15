@@ -34,11 +34,15 @@ table#gameTable>tbody>tr>td:hover {
     cursor: pointer;
 }
 
-p.cellValue {
+td {
     font-size: 50px;
     font-family: 'Orbitron', sans-serif;
     text-align: center;
     color: white;
+}
+
+td.zero {
+    color: rgba(0, 0, 0, 0);
 }
 
 h1#titolo {
