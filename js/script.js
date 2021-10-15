@@ -1,4 +1,13 @@
 let numberOfTiles;
+let score = 0;
+let hiscore = getCookieValue("hiscore");
+let moves = 0;
+
+//cookie function
+function getCookieValue(name) {
+  let result = document.cookie.match("(^|[^;]+)\\s*" + name + "\\s*=\\s*([^;]+)")
+  return result ? result.pop() : ""
+}
 
 /**
  * funzione eseguita per inizializzazione
@@ -91,6 +100,8 @@ function addlistener(index) {
 }
 
 function swap(evt) {
+  moves++
+  updateMoves()
   let collection = document.getElementsByClassName("game-tile");
   let numbers = pullSequence();
   let indexOfZero = numbers.indexOf(0);
@@ -111,8 +122,30 @@ function swap(evt) {
     numberOfTiles == 16
       ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0]
       : [1, 2, 3, 4, 5, 6, 7, 8, 0];
-  if(arraysEqual(sequence, rightSeq)) alert("win")
+  if(arraysEqual(sequence, rightSeq)) win()
   updateListeners();
+}
+
+function win() {
+  score = Math.floor(getScore())
+  if(score > hiscore) {
+    hiscore = score
+    document.cookie = `hiscore=${hiscore};SameSite=None;Secure`
+    updateScores()
+  }
+}
+
+function getScore() {
+  return Math.pow(0.93, score-50)
+}
+
+function updateMoves() {
+  +document.getElementById("moves-value").innerText++
+}
+
+function updateScores() {
+  document.getElementById("score-value").innerHTML = score
+  document.getElementById("highscore-value").innerHTML = hiscore
 }
 
 function arraysEqual(a, b) {
