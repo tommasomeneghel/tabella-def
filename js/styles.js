@@ -7,14 +7,14 @@ function setup() {
     document.getElementById("startButton").addEventListener("click", init); //startbutton functionality create game
     let menuInterface = document.getElementById("menuInterface");
     document.getElementById("icona-menu").addEventListener("click", svgAnimation);
+    svgAnimation()
 }
 
 function interfaceSwapper() {
     startInterface.style.display = "none";
     gameContainer.style.display = "unset";
+    menu = true
     svgAnimation()
-    menu = false
-
 }
 
 function svgAnimation() {
