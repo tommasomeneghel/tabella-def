@@ -60,6 +60,7 @@ h1#titolo {
 
 div#scores {
     position: fixed;
+    width: 15%;
     left: 2%;
     top: 50%;
     transform: translate(0%, -50%);

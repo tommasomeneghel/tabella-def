@@ -6,7 +6,7 @@ let moves = 0;
 //cookie function
 function getCookieValue(name) {
   let result = document.cookie.match("(^|[^;]+)\\s*" + name + "\\s*=\\s*([^;]+)")
-  return result ? result.pop() : ""
+  return result ? result.pop() : "0"
 }
 
 /**
@@ -14,6 +14,7 @@ function getCookieValue(name) {
  */
 function init() {
   numberOfTiles = document.getElementById("toggle").checked ? 16 : 9;
+  updateScores()
   createTable();
   // console.log(numberOfTiles); //! debug line
   pushSequence(createValidList()); // vado a creare una lista valida nella tabella
@@ -131,21 +132,25 @@ function win() {
   if(score > hiscore) {
     hiscore = score
     document.cookie = `hiscore=${hiscore};SameSite=None;Secure`
-    updateScores()
+    console.log({hiscore, score})
   }
+  updateScores()
+  updateMoves()
+  alert("vinto")
 }
 
 function getScore() {
-  return Math.pow(0.93, score-50)
+  return 100000 / moves;
+  // return Math.pow(0.93, score-50)
 }
 
 function updateMoves() {
-  +document.getElementById("moves-value").innerText++
+  document.getElementById("moves-value").innerText = moves
 }
 
 function updateScores() {
   document.getElementById("score-value").innerHTML = score
-  document.getElementById("highscore-value").innerHTML = hiscore
+  document.getElementById("highscore-value").innerHTML = getCookieValue("hiscore")
 }
 
 function arraysEqual(a, b) {
@@ -188,8 +193,9 @@ function sameRow(number, index) {
  */
 function createValidList() {
   let values = [];
-  let number_of_swaps = rn(100, 20) * 2; // il *2 assicura che sia un numero valido -> scambi pari = risolvibile
-  for (let i = 0; i < 16; i++) values.push(i); // crea lista 0-15
+  let number_of_swaps = parseInt((rn(100) + 20) * 2); // il *2 assicura che sia un numero valido -> scambi pari = risolvibile
+  console.log("numero scambi = " + number_of_swaps)
+  for (let i = 0; i < numberOfTiles; i++) values.push(i); // crea lista 0-numerocelle
   for (let i = 0; i < number_of_swaps; i++) {
     let x = rn(numberOfTiles, 0); // ottieni due posizioni casuali
     let y = rn(numberOfTiles, 0);
@@ -203,11 +209,10 @@ function createValidList() {
 /**
  * restituisce un numero casuale cui valore è compreso tra 0 e number
  * @param {Number} number valore massimo del numero casuale
- * @param {Number} offset valore da sommare al numero casuale
  * @returns numero casuale
  */
-function rn(number, offset = 0) {
-  return Math.floor(Math.random() * number + offset);
+function rn(number) {
+  return Math.floor(Math.random() * number);
 }
 
 /**
